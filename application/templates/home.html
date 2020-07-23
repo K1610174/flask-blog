@@ -1,2 +1,5 @@
 <!-- this is a very simple html file to demonstrate the template functionality -->
-<h1>{{ title }}</h1>
+{% extends "layout.html" %}
+{% block body_content %}
+    <p1> Welcome to my first web app! </p1>
+{% endblock %}
