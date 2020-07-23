@@ -1,5 +1,14 @@
 <!-- this is a very simple html file to demonstrate the template functionality -->
-{% extends "layout.html" %}
+{% extends 'layout.html' %}
 {% block body_content %}
-    <p1> Welcome to my first web app! </p1>
+<div class="home">
+    {% for post in posts %}
+        <div>
+            <h3>{{ post.title }}</h3>
+            <p><b> - First name:</b>{{ post.name.first }}</p>
+            <p><b> - Last name:</b>{{ post.name.last }}</p>
+            <p> -- {{ post.content }}</p>
+        </div>
+</div>
+    {% endfor %}
 {% endblock %}

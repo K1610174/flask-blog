@@ -5,6 +5,16 @@
 </head>
 <body>
  <h1>{{  title  }} Page</h1>
+ <div class="container">
+	<nav>
+	  <li><a href="{{ url_for('home') }}">Home</a> </li>
+	  <li><a href="{{ url_for('about') }}">About</a></li>
+	  <li><a href="{{ url_for('register') }}">Register</a></li>
+	  <li><a href="{{ url_for('login') }}">Login</a></li>
+	</nav>
+</div>
+ <div class="container">
   {% block body_content %}{% endblock %}
+</div>
 </body>
 </html>
