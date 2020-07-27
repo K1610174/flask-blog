@@ -5,15 +5,44 @@
 		{{ form.hidden_tag() }}<br>
             {{ form.first_name.label }}
 	    <p> {{ form.first_name }}</p>
-            <br>
+	    {% if form.first_name.errors %}
+	        <div class="error">
+		   {% for error in form.first_name.errors %}
+		       <span>{{ error }}</span>
+		    {% endfor %}
+		 </div>
+             {% endif %}
+	     <br>
+
             {{ form.last_name.label }}
 	    <p>{{ form.last_name }}</p>
+	    {% if form.last_name.errors %}
+                <div class="error">
+                   {% for error in form.last_name.errors %}
+                       <span>{{ error }}</span>
+                    {% endfor %}
+                 </div>
+             {% endif %}
             <br>
             {{ form.title.label }}
 	    <p>{{ form.title }}</p>
+	    {% if form.title.errors %}
+                <div class="error">
+                   {% for error in form.title.errors %}
+                       <span>{{ error }}</span>
+                    {% endfor %}
+                 </div>
+             {% endif %}
             <br>
             {{ form.content.label }}
 	    <p>{{ form.content }}</p>
+	    {% if form.content.errors %}
+                <div class="error">
+                   {% for error in form.content.errors %}
+                       <span>{{ error }}</span>
+                    {% endfor %}
+                 </div>
+             {% endif %}
             <br>
 	    <p> {{ form.submit }}</p>
         </form>
