@@ -2,20 +2,20 @@
 {% block body_content %}
     <div class='form'>
         <form method='POST' action=''>
-            {{ form.hidden_tag() }}
+		{{ form.hidden_tag() }}<br>
             {{ form.first_name.label }}
-            {{ form.first_name }}
+	    <p> {{ form.first_name }}</p>
             <br>
             {{ form.last_name.label }}
-            {{ form.last_name }}
+	    <p>{{ form.last_name }}</p>
             <br>
             {{ form.title.label }}
-            {{ form.title }}
+	    <p>{{ form.title }}</p>
             <br>
             {{ form.content.label }}
-            {{ form.content }}
+	    <p>{{ form.content }}</p>
             <br>
-            {{ form.submit }}
+	    <p> {{ form.submit }}</p>
         </form>
     </div>
 {% endblock body_content %}
