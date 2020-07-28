@@ -3,18 +3,16 @@
 {% block body_content %}
 <div class="home">
     {% for post in posts %}
-        <div>
-            <h3>{{ post.title }}</h3>
-	    <ul>
-		<li><b> First name:</b> {{ post.first_name }} </li>
-                <li><b> Last name:</b> {{ post.last_name }}</li>
-	    </ul>
-            <p> -- {{ post.content }}</p>
-        </div/>
-    {% endfor %}
     <div>
-	 
+        <h3>{{ post.title }}</h3>
+        <span>by
+		<i>{{ post.author.first_name }}
+		{{ post.author.last_name }}</i>
+	</span>
+        <span>on the <i>{{ post.date_posted }}</i></span>
+        <p>{{ post.content }}</p>
     </div>
+   {% endfor %} 
 </div>
     
 {% endblock body_content %}
