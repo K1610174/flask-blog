@@ -36,7 +36,7 @@
 		<br>
             <div class='form_group'>
                 {{ form.email.label }}
-		<p> {{ form.email }}</p>
+		 {{ form.email }}
                 {% if form.email.errors %}
                     <div class='error'>
                         {% for error in form.email.errors %}
@@ -49,6 +49,13 @@
 	    <div class='form_group'>
                 {{ form.submit }}
 	     </div>
+        </form>
+
+  </div>
+
+  <div class'delete-form'>
+        <form action="{{ url_for('account_delete') }}">
+		<div><p><button type="submit">Delete your account</button></p></div>
         </form>
   </div>
 

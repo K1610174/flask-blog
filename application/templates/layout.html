@@ -5,6 +5,7 @@
 </head>
 
 <body>
+	<h2>{{title }} - Page </h2>
 	<div class=navbar>
 		{% if current_user.is_authenticated %}
 			<a href="{{ url_for('home') }}">Home</a> |
