@@ -1,10 +1,11 @@
 import unittest
 
-from flask import url_for
+from flask import url_for, request
 from flask_testing import TestCase
 
 from application import app, db, bcrypt
 from application.models import Users, Posts
+from wtforms.validators import ValidationError
 from os import getenv
 
 class TestBase(TestCase):
@@ -120,6 +121,26 @@ class TestRegister(TestBase):
                     follow_redirects=True
                     )
             self.assertEqual(response.status_code, 200)
+
+    def test_validation_register_user(self):
+        """
+
+        """
+        with self.client:
+             response = self.client.post(
+                    url_for('register'),
+                    data=dict(
+                        first_name='admin',
+                        last_name='admin',
+                        email='admin@admin.com',
+                        password='admin2016',
+                        confirm_password='admin2016'
+                        ),
+                    follow_redirects=True
+                    )
+             self.assertIn(b'Email already in use',response.data)
+
+
 
 class TestPosts(TestBase):
 
