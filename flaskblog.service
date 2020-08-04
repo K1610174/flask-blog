@@ -1,0 +1,10 @@
+[Unit]
+Description=Flask App
+
+[Service]
+User= flaskblog-user
+WorkingDirectory=/home/kkekitinisa/flask-blog
+ExecStart=/bin/sh -c 'cd /home/kkekitinisa/flask-blog && . ./venv/bin/activate && gunicorn --workers=4 --bind=0.0.0.0:5000 app:app'
+
+[Install]
+WantedBy=multi-user.target
