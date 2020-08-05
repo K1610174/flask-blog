@@ -14,8 +14,8 @@ class TestBase(TestCase):
 
         # pass in configurations for test database
         config_name = 'testing'
-        app.config.update(SQLALCHEMY_DATABASE_URI=getenv('TEST_DB_URI'),
-                SECRET_KEY=getenv('TEST_SECRET_KEY'),
+        app.config.update(SQLALCHEMY_DATABASE_URI=getenv('DB_URI'),
+                SECRET_KEY=getenv('SKEY'),
                 WTF_CSRF_ENABLED=False,
                 DEBUG=True
                 )
