@@ -73,25 +73,6 @@ class TestRegistration(TestBase):
         # Assert that browser redirects to login page
         assert url_for('login') in self.driver.current_url
 
-class TestLogin(TestBase):
-
-    def test_registration(self):
-        """
-        Test that a user can login
-        """
-
-        # Click register menu link
-        self.driver.find_element_by_xpath('/html/body/div[1]/a[3]').click()
-        time.sleep(1)
-
-        # Fill in registration form
-        self.driver.find_element_by_xpath('//*[@id="email"]').send_keys(test_admin_email)
-        self.driver.find_element_by_xpath('//*[@id="password"]').send_keys( test_admin_password)
-        self.driver.find_element_by_xpath('//*[@id="submit"]').click()
-        time.sleep(1)
-
-        # Assert that browser redirects to login page
-        assert url_for('home') in self.driver.current_url
 
 if __name__ == '__main__':
     unittest.main(port=5000)
