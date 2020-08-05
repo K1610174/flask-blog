@@ -20,7 +20,7 @@ test_admin_password = "admin2020"
 class TestBase(LiveServerTestCase):
 
     def create_app(self):
-        app.config['SQLALCHEMY_DATABASE_URI'] = str(getenv('TEST_DATABASE'))
+        app.config['SQLALCHEMY_DATABASE_URI'] = str(getenv('DB_URI'))
         app.config['SECRET_KEY'] = getenv('SKEY')
         return app
 
